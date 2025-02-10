@@ -10,7 +10,12 @@ const nextConfig: NextConfig = {
   },
   eslint: {
     ignoreDuringBuilds: true,
-  }
+  },
+  experimental: {
+    sanity: {
+      disableVisualEditing: true,
+    },
+  },
 };
 
 export default nextConfig;
