@@ -1,16 +1,13 @@
 import type { Metadata } from "next";
-import {Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import { getCurrentSession } from "@/actions/auth";
 import { SanityLive } from "@/sanity/lib/live";
 import HeaderCategorySelector from "@/components/layout/HeaderCategorySelector";
 import Cart from "@/components/cart/Cart";
+import Script from "next/script";
 
-const inter = Inter({
-  
-  subsets: ["latin"],
-});
+
 
 
 
@@ -28,11 +25,17 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} antialiased`}
+        className={"antialiased"}
       >
        <Header 
                     user={user}
                     categorySelector={<HeaderCategorySelector />}
+                />
+                <Script 
+                src="https://cloud.umami.is/script.js"
+                data-website-id="eb270382-c777-4928-81d4-c333eec1ede0"
+                strategy="beforeInteractive"
+                
                 />
         {children}
 
